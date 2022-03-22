@@ -1,0 +1,33 @@
+@import "../../styles/_vars.scss";
+
+%Input {
+    width: 100%;
+    padding: 10px 12px;
+    color: $Secondary;
+    border: 1px solid $Primary;
+    border-radius: 5px;
+    background: #283046;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+%Textarea {
+    display: block;
+    width: 400px;
+    background: #283046;
+    color: $Secondary;
+    padding: 8px 14px;
+    border: 1px solid #404656;
+    border-radius: 6px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.myInput {
+    @extend %Input;
+}
+

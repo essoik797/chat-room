@@ -1,0 +1,206 @@
+@import "./vars.scss";
+
+// !left menu
+.leftside {
+  max-width: 280px;
+  width: 100%;
+  height: calc(100vh - 70px);
+  // height: 100vh;
+  position: fixed;
+  top: 70px;
+  left: 0;
+}
+
+.leftside__menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-shadow: 0px 4px 5px rgba(235, 99, 180, 0.6);
+  transform: translateX(-101%);
+  transition: transform 0.3s ease;
+}
+
+.leftside-enter-done .leftside__menu {
+  transform: translateX(0);
+  z-index: 2;
+  background: $Background;
+}
+
+//* search container
+.search {
+  &__wrap {
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+  }
+}
+
+//* rooms
+.rooms {
+  flex: 1 1 auto;
+}
+
+//* menu icon
+.menu__icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 31px;
+  height: 38px;
+  transition: 0.5s;
+}
+.menu__icon__triangle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.menu__icon.active {
+  position: absolute;
+  top: 30px;
+  left: 280px;
+}
+.menu__icon.active span {
+  background-color: transparent;
+}
+.menu__icon.active span::before,
+.menu__icon.active span::after {
+  width: 100%;
+  top: 50%;
+  left: 0;
+}
+.menu__icon.active span::before {
+  transform: rotate(45deg);
+}
+.menu__icon.active span::after {
+  transform: rotate(-45deg);
+}
+.menu__icon__lines {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 12px;
+}
+.menu__icon.active .menu__icon__lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 11px;
+  left: 5px;
+}
+.menu__icon span {
+  display: block;
+  width: 12px;
+  height: 1px;
+  background: #fff;
+  position: relative;
+}
+.menu__icon span::before,
+.menu__icon span::after {
+  content: "";
+  display: inline-block;
+  background-color: #fff;
+  width: 7px;
+  height: 1px;
+  position: absolute;
+  transition: 0.3s;
+}
+.menu__icon span::before {
+  top: -3px;
+  left: 3px;
+}
+.menu__icon span::after {
+  top: 3px;
+  left: 1px;
+}
+.menu__icon img {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+.menu__icon.active img {
+  transform: rotate(0deg);
+}
+
+
+//* modal
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+  z-index: 222;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.modal {
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  border: 1px solid $Primary;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 6px;
+  color: #fff;
+
+  &-container {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+  }
+  // &__button {
+  //     @extend %FilledButton;
+  //     width: 50%;
+  //     margin: 0 auto;
+  //     text-transform: uppercase;
+  // }
+
+  // &__input {
+  //     @extend %Input;
+  //     width: 80%;
+  //     margin: 0 auto;
+  //     margin-bottom: 12px;
+  // }
+  &__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-weight: bold;
+      cursor: pointer;
+  }
+
+  &__title {
+      text-align: center;
+      margin-bottom: 12px;
+  }
+
+  @media (max-width:$breakpoint627) {
+      width: 90%;
+      height: 90%;
+  }
+}

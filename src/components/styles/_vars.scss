@@ -1,0 +1,30 @@
+// Breakpoints
+@use "sass:math";
+
+$breakpoint1400: 1339.98+px;
+$breakpoint992: 991.98+px;
+$breakpoint768: 767.98+px;
+$breakpoint480: 479.98+px;
+
+// extra breakpoints
+$breakpoint627: 627.98+px;
+
+// Burger Menu
+$burgerBreakpoint: $breakpoint992;
+$burgerActiveColor: 'white';
+
+// !Colors 
+$Primary : #EF5525;
+$AccentOrange: #EF8625;
+$AccentGreen:#28C76F;
+$AccentPurple:#7367F0;
+$AccentBlue: #00CFE8;
+
+$Secondary: #82868B;
+$Success: #28C76F;
+$Dark: #4B4B4B;
+$Background: #161D31;
+
+//Fonts
+// $fontMain:'Red Hat Display';
+$fontSecondary: 'Montserrat';

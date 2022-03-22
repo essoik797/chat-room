@@ -1,0 +1,11 @@
+.room {
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: 1px solid #82868b;
+    color: #82868b;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}

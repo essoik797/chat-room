@@ -1,0 +1,51 @@
+@import './vars.scss';
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+aside, nav, footer, header, section {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4,h5,h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: $fontSecondary;
+     &.locked {
+        overflow: hidden;
+    }
+    min-height: 100%;
+    background: $Background;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
